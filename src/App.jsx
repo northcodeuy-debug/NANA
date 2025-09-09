@@ -37,10 +37,11 @@ const App = () => {
   const landingCanvasRef = useRef(null);
 
   // Estilos centralizados de la marca
+  // Estilos centralizados de la marca
   const brandStyles = {
     '--color-primary': '#800020', // Color principal (gris muy oscuro)
-    '--color-secondary': '#f5f5f5', // Color secundario (blanco/gris claro)
-    '--color-text-secondary': '#a3a3a3', // Color de texto secundario (gris)
+    '--color-secondary': '#800020', // Color secundario (blanco/gris claro)
+    '--color-text-secondary': '800020', // Color de texto secundario (gris)
     '--font-brand': '"Poppins", sans-serif',
     '--font-body': 'Inter, sans-serif',
   };
@@ -106,6 +107,11 @@ const App = () => {
     };
   }, []); // Se ejecuta solo una vez al cargar la página
 
+
+
+
+
+  
   // Componente de encabezado
   const Header = () => (
     <header className="fixed top-0 left-0 w-full z-20 bg-[var(--color-primary)]/80 backdrop-blur-sm border-b border-gray-700">
@@ -142,21 +148,29 @@ const App = () => {
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
         `}
       </style>
+
+      <Header /> {/* Encabezado de la web */}
+
       
       {/* Sección de la landing page con Three.js */}
       <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center text-center">
         {/* El canvas de Three.js ocupa toda la pantalla */}
         <div ref={landingCanvasRef} className="absolute inset-0 z-0"></div>
+        
+        
         <div className="relative z-10 p-8 rounded-xl bg-[var(--color-primary)]/50 backdrop-blur-md shadow-2xl">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-4 font-brand">#NANA</h1>
           <p className="text-lg md:text-xl text-[var(--color-text-secondary)]">
             Ropa que define tu estilo.
           </p>
         </div>
+      
+      
+      
       </div>
       
+        
       {/* Contenido principal de la página, visible al hacer scroll */}
-      <Header />
       <div className="container mx-auto px-4 pt-16 pb-8">
         <section className="mt-8 mb-24 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
@@ -180,6 +194,9 @@ const App = () => {
             </div>
           </div>
         </section>
+
+
+
 
         <main>
           <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12">

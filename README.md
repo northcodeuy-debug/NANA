@@ -202,6 +202,9 @@ nvm use --lts        # Activa esa versión en tu sesión actual
 ### Instalar TailwindClass --ChatGPT Coregir 
 
 npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+npm install -D tailwindcss postcss autoprefixer
 
 ### 2. Inicializar Archivos de Configuración
 

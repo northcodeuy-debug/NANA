@@ -5,8 +5,21 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        'text-secondary': 'var(--color-text-secondary)',
+      },
+      fontFamily: {
+        brand: ['var(--font-brand)'],
+        body: ['var(--font-body)'],
+      },
+    },
   },
   plugins: [],
 }
+
+
+
 
