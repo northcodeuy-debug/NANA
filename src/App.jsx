@@ -38,6 +38,9 @@ const App = () => {
 
   // Estilos centralizados de la marca
   // Estilos centralizados de la marca
+
+
+  // Borrar 
   const brandStyles = {
     '--color-primary': '#800020', // Color principal (gris muy oscuro)
     '--color-secondary': '#800020', // Color secundario (blanco/gris claro)
@@ -114,9 +117,10 @@ const App = () => {
   
   // Componente de encabezado
   const Header = () => (
-    <header className="fixed top-0 left-0 w-full z-20 bg-[var(--color-primary)]/80 backdrop-blur-sm border-b border-gray-700">
+    // fixed top-0 left-0 w-full z-20 bg-[var(--color-primary)]/80 backdrop-blur-sm border-b border-gray-700
+    <header className="fixed top-0 left-0 w-full z-20 bg-primary/80 backdrop-blur-sm border-b border-gray-700">
       <nav className="container mx-auto p-4 flex justify-between items-center font-bold text-lg">
-        <a href="#" className="hover:text-[var(--color-text-secondary)] transition-colors">
+        <a href="#" className="hover: text-primary w transition-colors">
           #NANA
         </a>
       </nav>

@@ -9,7 +9,8 @@ export default {
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
-        'text-secondary': 'var(--color-text-secondary)',
+        'text-primary': 'var(--color-text-primary)',
+        'text-secondary': 'var(--color-text-secondary)'
       },
       fontFamily: {
         brand: ['var(--font-brand)'],
