@@ -6,7 +6,8 @@
 :root {
   --color-primary: #686868;
   --color-secondary: #262626;
-  --color-text-primary: #ffffff;
+  /* --color-text-primary: #ef0000; */
+  --color-text-primary: #ffffff; 
   --color-text-secondary: #686868;
 
   --font-brand: 'Poppins', sans-serif;
