@@ -156,7 +156,10 @@ const App = () => {
 
   // Renderizado principal de la aplicación
   return (
+    
+    
     <div className="bg-[var(--color-primary)] text-[var(--color-secondary)] min-h-screen font-body">
+      
       {/* Carga de la tipografía de Google Fonts */}
       <style>
         {`
@@ -167,7 +170,7 @@ const App = () => {
       <Header /> {/* Encabezado de la web */}
 
       
-      {/* Sección de la landing page con Three.js */}
+      {/* Sección de la landing page con Three.js */}s
 
       {/* Seccion principal de la web
           - Resoluciones recomendadas:
@@ -184,14 +187,22 @@ const App = () => {
         {/* El canvas de Three.js ocupa toda la pantalla */}
        
         {/* Cuadro Nana */}
+        {/* ChatGPT lo queno enteindo es porque el no tiene el texto creoque 
+            esta relacionado con ref={landingCanvasRef}   este no se para que es pero si lo booro 
+            me desaparese el cuadro de #NANA */}
         <div ref={landingCanvasRef} className="absolute inset-0 z-0"></div>
         
+        
+        {/* ChatGPT Este tambine ace referiia al rectangulo central Peor no voe el texto #NANA  */}
         <div className="relative z-10 p-8 rounded-xl bg-[var(--color-primary)]/50 backdrop-blur-md shadow-2xl">
           <h1 className="text-text-primary text-5xl md:text-7xl font-extrabold mb-4 font-brand">#NANA</h1>
           <p className="text-lg md:text-xl text-text-primary">
             Ropa que define tu estilo.
           </p>
-        </div>
+        </div> 
+
+
+      
       </div>
       
         
@@ -238,6 +249,8 @@ const App = () => {
         <p>&copy; 2024 #NANA. Todos los derechos reservados.</p>
       </footer>
     </div>
+
+    
   );
 };
 
