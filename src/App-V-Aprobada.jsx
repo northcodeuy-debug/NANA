@@ -165,6 +165,33 @@ const App = () => {
       </h2>
   );
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <div style={{...brandStyles, backgroundImage: "var(--background-texture)"}} className="bg-[var(--color-background)] text-[var(--color-text)] min-h-screen font-body bg-fixed">
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700;900&family=Montserrat:wght@400;600&display=swap');`}</style>

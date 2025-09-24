@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+//App.jsx
+
+import React, {useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 import fotPro1 from './assets/productos/fotPro1.png';
@@ -83,11 +85,27 @@ const App = () => {
     };
   }, []); // Se ejecuta solo una vez al cargar la página
 
+// --- Accesorios ----------
+  
+    // Datos Accesorios   
+    const accesorios = [
+        { id: 5, nombre: 'Choker "Amor Tóxico"', precio: 22.00, imagenUrl: 'https://placehold.co/600x800/eeeeee/4a4a4a?text=Choker+Corazón', descripcion: 'El detalle que lo cambia todo. Un aviso.', info: 'Corazón de aleación pulida. Cordón de antelina que acaricia y marca. Ajustalo a tu medida. No apto para sensibles.'},
+        { id: 6, nombre: 'Choker "Supernova"', precio: 22.00, imagenUrl: 'https://placehold.co/600x800/f5f5f5/5a5a5a?text=Choker+Estrella', descripcion: 'Naciste para brillar, no para pedir permiso.', info: 'Estrella de acero que no se apaga. Un destello en la oscuridad. Combinalo con miradas que desafían.'},
+        { id: 7, nombre: 'Choker "Nocturna"', precio: 22.00, imagenUrl: 'https://placehold.co/600x800/e9e9e9/4f4f4f?text=Choker+Luna', descripcion: 'Para las que viven de noche. Magnética.', info: 'Luna creciente rodiada. Atrae miradas, repele malas vibras. Tu amuleto urbano.'},
+        { id: 8, nombre: 'Choker "Eclipse"', precio: 22.00, imagenUrl: 'https://placehold.co/600x800/fefefe/5f5f5f?text=Choker+Sol', descripcion: 'Energía que se lleva en el cuello. Irradiá poder.', info: 'Un sol que no quema, empodera. Ideal para superponer cuando un solo choker no es suficiente.'},
+    ]
 
 
+// ---- Segunda Mano ----------
+  // Datos Segunda Mano
+
+    const segundaMano = [
+        { id: 9, nombre: 'Bucaneras "Gigante"', precio: 45.00, imagenUrl: 'https://placehold.co/600x800/f1f1f1/111111?text=Bucaneras', descripcion: 'Ya tienen historia. Ahora escribí la tuya.', info: 'Gamuza sintética con plataforma para ver el mundo desde arriba. Talle 36. Ya pisaron fuerte, es tu turno.'},
+        { id: 10, nombre: 'Campera "Reliquia"', precio: 18.00, imagenUrl: 'https://placehold.co/600x800/f3f3f3/2a2a2a?text=Campera+Vintage', descripcion: 'Única. Como vos. Imposible de copiar.', info: 'Denim de los 90s, cuando la actitud no se compraba. Talle M. El desgaste es una medalla, no un defecto.'},
+    ]
 
 
-  // ---- Encabesado ----------
+// ---- Encabesado ----------
   
   // Datos de productos de ejemplo. En una aplicación real, esto vendría de una base de datos.
   const productos = [
@@ -136,7 +154,7 @@ const App = () => {
   );
 
 
-  //  --------- Productos -----------
+//  --------- Productos -----------
   // Componente de producto
   const ProductoCard = ({ producto }) => (
     <div className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
@@ -154,10 +172,42 @@ const App = () => {
     </div>
   );
 
+
+// -------- Seccion Vision -----------
+  // Componente de la sección de visión
+  const VisionSection = () => (
+        <section className="mt-8 mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">
+            NO SEGUIMOS TENDENCIAS. LAS CREAMOS.
+          </h2>
+          <p className="text-lg text-[var(--color-text-muted)] max-w-3xl mx-auto">
+            Somos para las que no piden permiso. Para las que mezclan, se atreven y escriben su propia historia con cada outfit. #NANA no es ropa, es una actitud.
+          </p>
+        </section>
+  );
+
+// -------- Seccion Inicio -----------
+
+
+  // Componente de inicio 
+  const InicioSection = () => 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   // Renderizado principal de la aplicación
   return (
-    
-    
     <div className="bg-[var(--color-primary)] text-[var(--color-secondary)] min-h-screen font-body">
       
       {/* Carga de la tipografía de Google Fonts */}
@@ -167,21 +217,9 @@ const App = () => {
         `}
       </style>
 
-      <Header /> {/* Encabezado de la web */}
 
-      
-      {/* Sección de la landing page con Three.js */}s
-
-      {/* Seccion principal de la web
-          - Resoluciones recomendadas:
-            - Móviles: 375px - 667px
-            - Tablets: 768px - 1024px
-            - Escritorio: 1280px - 1920px
-          - Recomendaciones de Geminis
-            1920x1080 - 2560x1440 - 16:9
-          Metodos de compresion TinyPNG
-           - No pear mas de 200-300 KB.
-        */}
+      {/* Encabezado de la web */}
+      <Header/> 
 
       <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center text-center">
         {/* El canvas de Three.js ocupa toda la pantalla */}
@@ -200,9 +238,6 @@ const App = () => {
             Ropa que define tu estilo.
           </p>
         </div> 
-
-
-      
       </div>
       
         
