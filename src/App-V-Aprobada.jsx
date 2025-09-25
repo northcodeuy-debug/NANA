@@ -217,6 +217,8 @@ const App = () => {
       
       <Header />
       <div className="container mx-auto px-4 pt-16 pb-8">
+
+        
         <section className="mt-8 mb-20 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">
             NO SEGUIMOS TENDENCIAS. LAS CREAMOS.
@@ -252,6 +254,9 @@ const App = () => {
           </section>
         </main>
       </div>
+
+
+
       <footer className="bg-[var(--color-primary)] border-t border-[var(--color-secondary)] py-8 text-center text-[var(--color-text-muted)] mt-16">
         <div className="flex justify-center space-x-6 mb-4">
             <a href="https://www.instagram.com/nana.uruguay/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text)] transition-colors">Tienda IG</a>
