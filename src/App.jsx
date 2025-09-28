@@ -15,14 +15,6 @@ const App = () => {
   // Estilos centralizados de la marca
 
 
-  // Borrar 
-  const brandStyles = {
-    '--color-primary': '#800020', // Color principal (gris muy oscuro)
-    '--color-secondary': '#800020', // Color secundario (blanco/gris claro)
-    '--color-text-secondary': '800020', // Color de texto secundario (gris)
-    '--font-brand': '"Poppins", sans-serif',
-    '--font-body': 'Inter, sans-serif',
-  };
 
   // Efecto para la animación de Three.js en la página de inicio
   useEffect(() => {
@@ -108,7 +100,7 @@ const App = () => {
 // ---- Encabesado ----------
   
   // Datos de productos de ejemplo. En una aplicación real, esto vendría de una base de datos.
-  const productos = [
+  const ColeccionActual = [
     {
       id: 1,
       nombre: 'Sudadera Negra Clásica',
@@ -154,11 +146,6 @@ const App = () => {
   );
 
 
-
-
-
-
-
 //  --------- Productos -----------
 
   const SectionTitle = ({children}) => (
@@ -167,7 +154,15 @@ const App = () => {
       </h2>
   );
 
-  
+  // Componente de sección de productos con su titulo que identifica la catergoria.
+  const SectionProductos  = ({titulo}, {productos})  => (
+    <section>
+      <SectionTitle>{titulo}</SectionTitle>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {productos.map((producto) => <ProductoCard key={producto.id} producto={producto} onVerMas={() => setSelectedProduct(producto)} />)}
+      </div>
+    </section>
+  );
 
   // Componente de producto
   const ProductoCard = ({ producto }) => (
@@ -253,9 +248,10 @@ const App = () => {
       <AboutUsSection/>
 
 
-      <main className="space-y-16">
-
-      </main>
+      {/* <main className="space-y-16"> */}
+        <SectionTit>Colección Actual</SectionTit>
+        {/* <ProductoCard producto={ColeccionActual}/> */}
+      {/* </main> */}
 
 
       <footer className="bg-[var(--color-primary)] border-t border-gray-700 py-6 text-center text-text-primary">
