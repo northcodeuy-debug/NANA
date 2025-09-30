@@ -14,6 +14,9 @@ export default {
         'text-primary': 'var(--color-text-primary)',
         'text-secondary': 'var(--color-text-secondary)'
       },
+      backgroundImage: {
+        'fondo-web': `url('/src/assets/fondoWeb.jpg')`,
+      },
       fontFamily: {
         brand: ['var(--font-brand)'],
         body: ['var(--font-body)'],
@@ -22,7 +25,3 @@ export default {
   },
   plugins: [],
 }
-
-
-
-

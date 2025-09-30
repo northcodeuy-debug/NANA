@@ -125,3 +125,8 @@
           </div>
         </main>
       </div>
+
+
+// Esto es el contenedor principal el que esta debajo de return de app.jsx
+<div className=" text-text-primary bg-primary min-h-screen font-body">
+      
