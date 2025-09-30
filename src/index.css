@@ -1,16 +1,31 @@
 /* src/index.css */
-/* Tipografías (opcional, si querés Poppins e Inter) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap');
 
+/* 🟢 Paso 1: Consolidar y cargar todas las fuentes necesarias */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap');
 /* Variables globales */
 :root {
   --color-primary: #686868;
   --color-secondary: #262626;
   /* --color-text-primary: #ef0000; */
   --color-text-primary: #ffffff; 
-  --color-text-secondary: #686868;
-  --font-brand: 'Poppins', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --color-text-secondary: #292929;
+
+  /* Fuente Anterior */
+  /* --font-brand: 'Poppins', sans-serif; */
+  
+  /* fuente que me gusto */
+  /* --font-brand: 'Style Script', cursive;  */
+
+
+  --font-brand: 'Style Script', cursive;
+
+
+  /* Esta es la que Estaba de antes  */
+  /* --font-body: 'Inter', sans-serif; */
+
+  --font-body: 'Cormorant Unicase', serif;
+  
+  /* --font-body: 'Montserrat', sans-serif; */
 }
 
 @tailwind base;

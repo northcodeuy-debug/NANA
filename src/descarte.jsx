@@ -130,3 +130,38 @@
 // Esto es el contenedor principal el que esta debajo de return de app.jsx
 <div className=" text-text-primary bg-primary min-h-screen font-body">
       
+
+
+
+
+
+
+
+
+  // Tarjeta de Proeudtos ----------------------------
+  const ProductoCard = ({ producto }) => (
+    <div className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+      <img
+        src={producto.imagenUrl}
+        alt={producto.nombre}
+        className="w-full h-auto object-cover"
+      />
+      <div className="p-4 flex flex-col items-center text-center">
+        <h3 className="text-text-primary text-xl font-semibold mb-2">{producto.nombre}</h3>
+
+        <p className="text-text-primary mb-4">{producto.descripcion}</p>
+        <span className="text-text-primary text-2xl font-bold mb-4">${producto.precio.toFixed(2)}</span>
+      </div>
+    </div>
+  );
+
+
+
+
+
+
+
+                  text-text-primary 
+                  hover:text-text-secondary 
+                  transition-colors 
+                  text-2xl"

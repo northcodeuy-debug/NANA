@@ -3,6 +3,10 @@
 import React, {useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
+// Import Font Awesome for social media icons (make sure to install it via npm)
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 // Fotos Producto Actual 
 import fotProAct1 from './assets/productos/fotProdAct1.png';
 import fotProAct2 from './assets/productos/fotProdAct2.png';
@@ -104,7 +108,7 @@ const App = () => {
     <header className="fixed top-0 left-0 w-full z-20 bg-primary/80 backdrop-blur-sm border-b border-gray-700">
       <nav className="container mx-auto p-4 flex justify-between items-center font-bold text-lg">
         {/*hover:text-primary w transition-colors  */}
-        <a href="#" className="text-text-primary hover:text-text-secondary w transition-colors">
+        <a href="#" className="text-text-secondary font-brand hover:text-text-primary w transition-colors ">
           #NANA
         </a>
       </nav>
@@ -112,10 +116,57 @@ const App = () => {
   );
 
 
+
+
+
+// -------- Seccion Inicio -----------
+
+
+  // Componente de inicio 
+
+  // Falta agregarle
+  // "No vestimos cuerpos, vestimos personalidades. #NANA es el código de las que no siguen el mapa."
+  const InicioSection = () => (
+    <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center text-center">
+      {/* El canvas de Three.js ocupa toda la pantalla */}
+      
+      {/* Cuadro Nana */}
+      {/* ChatGPT lo queno enteindo es porque el no tiene el texto creoque 
+          esta relacionado con ref={landingCanvasRef}   este no se para que es pero si lo booro 
+          me desaparese el cuadro de #NANA */}
+      <div ref={landingCanvasRef} className="absolute inset-0 z-0"></div>
+      
+      
+      {/* ChatGPT Este tambine ace referiia al rectangulo central Peor no voe el texto #NANA  */}
+      <div className="relative z-10 p-8 rounded-xl bg-primary/50 backdrop-blur-md shadow-2xl">
+        <h1 className="text-text-secondary font-brand text-5xl md:text-7xl font-extrabold mb-4">#NANA</h1>
+        <p className="text-lg md:text-xl text-text-primary">
+          Ropa que define tu estilo.
+        </p>
+      </div> 
+    </div>
+  );
+
+  // ------- Seccion Sobre Nosotros -----------
+
+  // Componente de la sección "Sobre Nosotros"
+    const AboutUsSection = () => (
+          <section className="mt-8 mb-20 text-center">
+            <h2 className="font-brand text-4xl md:text-5xl  mb-4">
+              NO SEGUIMOS TENDENCIAS. LAS CREAMOS.
+            </h2>
+            <p className="font-body text-lg  max-w-3xl mx-auto">
+              Somos para las que no piden permiso. Para las que mezclan, se atreven y escriben su propia historia con cada outfit. #NANA no es ropa, es una actitud.
+            </p>
+          </section>
+    );
+
+
+
 //  --------- Productos -----------
 
   const SectionTitle = ({children}) => (
-      <h2 className="text-text-primary text-4xl md:text-5xl font-extrabold text-center mb-10 font-display tracking-wider uppercase">
+      <h2 className="text-text-primary font-brand text-4xl md:text-5xl  text-center mb-10 tracking-wider uppercase">
           {children}
       </h2>
   );
@@ -144,9 +195,9 @@ const App = () => {
       </div>
       
       <div className="p-4 flex flex-col items-center text-center">
-        <h3 className="text-text-primary text-xl font-semibold mb-2">{producto.nombre}</h3>
+        <h3 className="text-text-primary text-xl font-body mb-2">{producto.nombre}</h3>
 
-        <p className="text-text-primary mb-4">{producto.descripcion}</p>
+        <p className="text-text-primary font-body mb-4">{producto.descripcion}</p>
         <span className="text-text-primary text-2xl font-bold mb-4">${producto.precio.toFixed(2)}</span>
       </div>
     </div>
@@ -246,53 +297,72 @@ const App = () => {
     },
   ];
 
-// -------- Seccion Inicio -----------
 
 
-  // Componente de inicio 
 
-  // Falta agregarle
-  // "No vestimos cuerpos, vestimos personalidades. #NANA es el código de las que no siguen el mapa."
-  const InicioSection = () => (
-    <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center text-center">
-      {/* El canvas de Three.js ocupa toda la pantalla */}
-      
-      {/* Cuadro Nana */}
-      {/* ChatGPT lo queno enteindo es porque el no tiene el texto creoque 
-          esta relacionado con ref={landingCanvasRef}   este no se para que es pero si lo booro 
-          me desaparese el cuadro de #NANA */}
-      <div ref={landingCanvasRef} className="absolute inset-0 z-0"></div>
-      
-      
-      {/* ChatGPT Este tambine ace referiia al rectangulo central Peor no voe el texto #NANA  */}
-      <div className="relative z-10 p-8 rounded-xl bg-primary/50 backdrop-blur-md shadow-2xl">
-        <h1 className="text-text-primary text-5xl md:text-7xl font-extrabold mb-4 font-brand">#NANA</h1>
-        <p className="text-lg md:text-xl text-text-primary">
-          Ropa que define tu estilo.
-        </p>
-      </div> 
+
+// -------- Seccion Footer -----------
+
+
+  const socialLinks = [
+    { 
+        id: 1, 
+        name: 'Instagram (Empresa)', 
+        url: 'https://www.instagram.com/nana.uruguay?igsh=MWpwYXEwcTVhM2x0Mg%3D%3D', 
+        icon: faInstagram 
+    },
+    { 
+        id: 2, 
+        name: 'Instagram (Personal)', 
+        url: 'https://www.instagram.com/mili.vidarte/', 
+        icon: faInstagram 
+    }
+  ];
+
+  
+  const SocialIcons = ({ links }) => (
+    <div className="flex justify-center space-x-6 mb-4">
+        {links.map((link) => (
+            <a 
+                key={link.id} 
+                href={link.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                title={link.name}
+                className="
+                    flex items-center space-x-2 p-3 rounded-xl 
+                    border border-text-primary 
+                    text-text-primary text-base font-semibold
+                    transition-colors duration-200
+                    hover:bg-text-primary hover:text-secondary 
+                  "
+            >
+
+                {/* Icono de redes sociales */}
+                <FontAwesomeIcon icon={link.icon} /> 
+                
+                <span>{link.name}</span>
+            </a>
+        ))}
     </div>
   );
 
-  // ------- Seccion Sobre Nosotros -----------
-
-  // Componente de la sección "Sobre Nosotros"
-  const AboutUsSection = () => (
-        <section className="mt-8 mb-20 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">
-            NO SEGUIMOS TENDENCIAS. LAS CREAMOS.
-          </h2>
-          <p className="text-lg  max-w-3xl mx-auto">
-            Somos para las que no piden permiso. Para las que mezclan, se atreven y escriben su propia historia con cada outfit. #NANA no es ropa, es una actitud.
-          </p>
-        </section>
+  const Footer = () => (
+    <footer className="bg-secondary border-t border-gray-700 py-3 text-center text-text-primary mt-20">
+      <SocialIcons links={socialLinks} />
+    </footer>
   );
-
-
   
+
+
+// ---------------- cuerdo principal de app -------------------
+
   // Renderizado principal de la aplicación
   return (
-      <div 
+    // Div principal que contiene toda la app
+    // 🟢 Usamos las clases definidas en tailwind.config.js
+    // 🟢 Usamos la imagen de fondo definida en tailwind.config.js
+    <div 
         className="
             // 🟢 ¡USAMOS LA CLASE DEFINIDA EN TAILWIND!
             bg-fondo-web 
@@ -335,9 +405,7 @@ const App = () => {
       </main>
 
 
-      <footer className="bg-secondary border-t border-gray-700 py-6 text-center text-text-primary">
-        <p>&copy; 2024 #NANA. Todos los derechos reservados.</p>
-      </footer>
+      <Footer/>
     </div>
 
     
