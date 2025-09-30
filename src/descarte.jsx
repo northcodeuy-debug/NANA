@@ -165,3 +165,9 @@
                   hover:text-text-secondary 
                   transition-colors 
                   text-2xl"
+
+
+
+/* Tipografías (opcional, si querés Poppins e Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap'); */</div>
