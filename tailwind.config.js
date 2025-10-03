@@ -1,5 +1,7 @@
 // tailwind.config.js
 
+import { log } from 'three/tsl';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -20,6 +22,7 @@ export default {
       fontFamily: {
         brand: ['var(--font-brand)'],
         body: ['var(--font-body)'],
+        logo: ['var(--font-logo)'],
       },
     },
   },

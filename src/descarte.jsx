@@ -13,161 +13,152 @@
            - No pear mas de 200-300 KB.
         */}
 
-
-
-
-      <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center text-center">
-        {/* El canvas de Three.js ocupa toda la pantalla */}
-       
-        {/* Cuadro Nana */}
-        {/* ChatGPT lo queno enteindo es porque el no tiene el texto creoque 
-            esta relacionado con ref={landingCanvasRef}   este no se para que es pero si lo booro 
-            me desaparese el cuadro de #NANA */}
-        <div ref={landingCanvasRef} className="absolute inset-0 z-0"></div>
-        
-        
-        {/* ChatGPT Este tambine ace referiia al rectangulo central Peor no voe el texto #NANA  */}
-        <div className="relative z-10 p-8 rounded-xl bg-[var(--color-primary)]/50 backdrop-blur-md shadow-2xl">
-          <h1 className="text-text-primary text-5xl md:text-7xl font-extrabold mb-4 font-brand">#NANA</h1>
-          <p className="text-lg md:text-xl text-text-primary">
-            Ropa que define tu estilo.
-          </p>
-        </div> 
-      </div>
-
-
-
-
-
-
-// --------------------------- Seccion de inicio ---------------------------
-
-
-
-
-
-
-
-    <section className="mt-8 mb-20 text-center">
-      <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">
-        NO SEGUIMOS TENDENCIAS. LAS CREAMOS.
-      </h2>
-      <p className="text-lg text-[var(--color-text-muted)] max-w-3xl mx-auto">
-        Somos para las que no piden permiso. Para las que mezclan, se atreven y escriben su propia historia con cada outfit. #NANA no es ropa, es una actitud.
-      </p>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-// -------- Seccion Vision -----------
-  // Componente de la sección de visión
-  const VisionSection = () => (
-        <section className="mt-8 mb-20 text-center">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 font-display">
-            NO SEGUIMOS TENDENCIAS. LAS CREAMOS.
-          </h2>
-          <p className="text-lg text-[var(--color-text-muted)] max-w-3xl mx-auto">
-            Somos para las que no piden permiso. Para las que mezclan, se atreven y escriben su propia historia con cada outfit. #NANA no es ropa, es una actitud.
-          </p>
-        </section>
-  );
-
-
-
-
-
-      {/* Contenido principal de la página, visible al hacer scroll */}
-      <div className="container mx-auto px-4 pt-16 pb-8">
-        <section className="mt-8 mb-24 text-center">
-          <h2 className="text-text-primary text-4xl md:text-5xl font-extrabold mb-4">
-            ¿Por qué elegir nuestra marca?
-          </h2>
-          <p className="text-lg text-text-primary max-w-3xl mx-auto">
-            No somos solo ropa, somos una declaración. Si quieres verte impresionante y sentirte seguro en tu propia piel, nuestra marca está hecha para ti.
-          </p>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-neutral-800 p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-2">Diseño Único</h3>
-              <p className="text-text-primary">Nuestras prendas están diseñadas para destacar. Olvídate de lo ordinario.</p>
-            </div>
-            <div className="bg-neutral-800 p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-2">Calidad Superior</h3>
-              <p className="text-text-primary">Usamos los mejores materiales para que tu ropa dure y se sienta increíble.</p>
-            </div>
-            <div className="bg-neutral-800 p-6 rounded-xl shadow-lg transform transition-transform duration-300 hover:scale-105">
-              <h3 className="text-2xl font-semibold mb-2">Comunidad</h3>
-              <p className="text-text-primary">Al unirte a nuestra marca, te unes a una comunidad que valora la expresión personal.</p>
-            </div>
-          </div>
-        </section>
-
-
-
-
-        <main>
-          <h2 className="text-text-primary text-4xl md:text-5xl font-extrabold text-center mb-12">
-            Nuestros Productos
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {productos.map((producto) => (
-              <ProductoCard key={producto.id} producto={producto} />
-            ))}
-          </div>
-        </main>
-      </div>
-
-
-// Esto es el contenedor principal el que esta debajo de return de app.jsx
-<div className=" text-text-primary bg-primary min-h-screen font-body">
+ 
+        // Efecto para la animación de Three.js en la página de inicio
+  
+  
+  // Este div es para que el canvas de Three.js ocupe toda la pantalla
+  <div ref={landingCanvasRef} className="absolute inset-0 z-0"></div>
       
+  
+  // Es un efecto de 
+  useEffect(() => {
+    // Referencia al contenedor para el canvas de Three.js
+    if (!landingCanvasRef.current) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    
+    // Configura el renderizador para que coincida con el tamaño de la ventana
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio); // Para pantallas de alta resolución
+    landingCanvasRef.current.appendChild(renderer.domElement);
+
+    // Crea la geometría y el material de las partículas
+    const particlesGeometry = new THREE.BufferGeometry();
+    const count = 5000;
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+
+    for (let i = 0; i < count * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 10;
+      colors[i] = Math.random();
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+      size: 0.02,
+      vertexColors: true,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+    });
+    
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particles);
+
+    camera.position.z = 2;
+
+    // Bucle de animación
+    const animate = () => {
+      requestAnimationFrame(animate);
+
+      particles.rotation.y += 0.0005;
+      particles.rotation.x += 0.0002;
+
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    // Limpieza de la escena al desmontar el componente
+    return () => {
+      if (landingCanvasRef.current) {
+        landingCanvasRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+    };
+  }, []); // Se ejecuta solo una vez al cargar la página
+
+  
+
+      {/*Cuadro #NANA inicio de pagian */}
+      <div className="relative z-10 p-8 rounded-xl bg-primary/50 backdrop-blur-md shadow-2xl">
+        <h1 className="text-text-secondary font-logo text-5xl md:text-7xl font-extrabold mb-4">#NANA</h1>
+        <p className="text-lg md:text-xl text-text-primary">
+          Ropa que define tu estilo.
+        </p>
+      </div> 
 
 
 
+         
+      
+  // Segundo mano -------------------------
+
+  // Fotos Productos Segunda Mano 
+  import fotSegunMano1 from './assets/productos/fotSegundaMano1.png';
+  import fotSegunMano2 from './assets/productos/fotSegundaMano2.png';
+  import fotSegunMano3 from './assets/productos/fotSegundaMano3.png';
+  import fotSegunMano4 from './assets/productos/fotSegundaMano4.png';
+
+
+  const SegundaMano = [
+    {
+      id: 1,
+      nombre: 'Chaqueta de Cuero Vintage',
+      precio: 80.00,
+      imagenUrl: fotSegunMano1,
+      descripcion: 'Una chaqueta de cuero auténtico con carácter.',
+    },
+    {
+      id: 2,
+      nombre: 'Botas de Combate',
+      precio: 70.00,
+      imagenUrl: fotSegunMano2,
+      descripcion: 'Botas resistentes y con estilo para cualquier aventura.',
+    },
+    {
+      id: 3,
+      nombre: 'Vestido Floral',
+      precio: 40.00,
+      imagenUrl: fotSegunMano3,
+      descripcion: 'Un vestido ligero y fresco, perfecto para el verano.',
+    },
+    {
+      id: 4,
+      nombre: 'Camisa de Rayas',
+      precio: 35.00,
+      imagenUrl: fotSegunMano4,
+      descripcion: 'Una camisa clásica que nunca pasa de moda.',
+    },
+  ];
+
+
+  <ProductosSection titulo={'Segunda Mano'} productos={SegundaMano}/>
 
 
 
-
-
-  // Tarjeta de Proeudtos ----------------------------
-  const ProductoCard = ({ producto }) => (
+  // Componente de tarjeta producto 02/04
+   const ProductoCard = ({ producto }) => (
     <div className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
-      <img
-        src={producto.imagenUrl}
-        alt={producto.nombre}
-        className="w-full h-auto object-cover"
-      />
+     
+     <div className="w-full aspect-[4/5] overflow-hidden">
+        <img
+          src={producto.imagenUrl}
+          alt={producto.nombre}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+      
       <div className="p-4 flex flex-col items-center text-center">
-        <h3 className="text-text-primary text-xl font-semibold mb-2">{producto.nombre}</h3>
+        <h3 className="text-text-primary text-xl font-body mb-2">{producto.nombre}</h3>
 
-        <p className="text-text-primary mb-4">{producto.descripcion}</p>
+        <p className="text-text-primary font-body mb-4">{producto.descripcion}</p>
         <span className="text-text-primary text-2xl font-bold mb-4">${producto.precio.toFixed(2)}</span>
       </div>
+      
     </div>
   );
-
-
-
-
-
-
-
-                  text-text-primary 
-                  hover:text-text-secondary 
-                  transition-colors 
-                  text-2xl"
-
-
-
-/* Tipografías (opcional, si querés Poppins e Inter) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap'); */</div>
