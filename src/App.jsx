@@ -59,9 +59,6 @@ const App = () => {
       {/* ChatGPT Este tambine ace referiia al rectangulo central Peor no voe el texto #NANA  */}
       <div className="relative z-10 p-8 ">
         <h1 className="text-text-secondary font-logo text-5xl md:text-7xl font-extrabold mb-4">#NANA</h1>
-        <p className="text-lg md:text-xl text-text-primary">
-          Ropa que define tu estilo.
-        </p>
       </div> 
     </div>
   );
@@ -114,9 +111,9 @@ const App = () => {
       </div>
       
       <div className="p-4 flex flex-col items-center text-center">
-        <h3 className="text-text-primary text-xl font-body mb-2">{producto.nombre}</h3>
+        <h3 className="text-text-primary text-xl font-body font-medium mb-2">{producto.nombre}</h3>
 
-        <p className="text-text-primary font-body mb-4">{producto.descripcion}</p>
+        <p className="text-text-primary font-body font-normal mb-4">{producto.descripcion}</p>
         <span className="text-text-primary text-2xl font-bold mb-4">${producto.precio.toFixed(2)}</span>
       </div>
       
