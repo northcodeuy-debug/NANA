@@ -103,7 +103,7 @@ const App = () => {
 
   // Componente de producto
   const ProductoCard = ({ producto }) => (
-    <div className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+    <div className=" rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
      
      <div className="w-full aspect-[4/5] overflow-hidden">
         <img
