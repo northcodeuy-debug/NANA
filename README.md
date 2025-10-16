@@ -1,5 +1,5 @@
 # 🌐 Proyecto Web Estática - #NANA
-## Vista previa en: [https://arygimenez.github.io/NANA/](https://arygimenez.github.io/NANA/)
+## Vista previa en: [https://northcodeuy-debug.github.io/NANA/](https://northcodeuy-debug.github.io/NANA/)
 ## 📖 Descripción
 
 Landing page estática desarrollada en **React + Vite**, con estilos en **TailwindCSS** y animación de partículas en **Three.js**.  
