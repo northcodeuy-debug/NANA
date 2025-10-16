@@ -8,49 +8,46 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 // Fotos Producto Actual 
-import fotProAct1 from './assets/productos/fotProdAct1.png';
-import fotProAct2 from './assets/productos/fotProdAct2.png';
-import fotProAct3 from './assets/productos/fotProdAct3.png';
-import fotProAct4 from './assets/productos/fotProdAct4.png';
-import fotProAct5 from './assets/productos/fotProdAct5.png';
-import fotProAct6 from './assets/productos/fotProdAct6.png';
-import fotProAct7 from './assets/productos/fotProdAct7.png';
-import fotProAct8 from './assets/productos/fotProdAct8.png';
-import fotProAct9 from './assets/productos/fotProdAct9.png';
-import fotProAct10 from './assets/productos/fotProdAct10.png';
-import fotProAct11 from './assets/productos/fotProdAct11.png';
-import fotProAct12 from './assets/productos/fotProdAct12.png';
-import fotProAct13 from './assets/productos/fotProdAct13.png';
-import fotProAct14 from './assets/productos/fotProdAct14.png';
-import fotProAct15 from './assets/productos/fotProdAct15.png';
-import fotProAct16 from './assets/productos/fotProdAct16.png';
-import fotProAct17 from './assets/productos/fotProdAct17.png';
-import fotProAct18 from './assets/productos/fotProdAct18.png';
-import fotProAct19 from './assets/productos/fotProdAct19.png';
-import fotProAct20 from './assets/productos/fotProdAct20.png';
-import fotProAct21 from './assets/productos/fotProdAct21.png';
-import fotProAct22 from './assets/productos/fotProdAct22.png';
-import fotProAct23 from './assets/productos/fotProdAct23.png';
-import fotProAct24 from './assets/productos/fotProdAct24.png';
-import fotProAct25 from './assets/productos/fotProdAct25.png';
-import fotProAct26 from './assets/productos/fotProdAct26.png';
-import fotProAct27 from './assets/productos/fotProdAct27.png';
-import fotProAct28 from './assets/productos/fotProdAct28.png';
-import fotProAct29 from './assets/productos/fotProdAct29.png';
-import fotProAct30 from './assets/productos/fotProdAct30.png';
-import fotProAct31 from './assets/productos/fotProdAct31.png';
-import fotProAct32 from './assets/productos/fotProdAct32.png';
-import fotProAct33 from './assets/productos/fotProdAct33.png';
-import fotProAct34 from './assets/productos/fotProdAct34.png';
-
-
-
+import fotProAct1 from './assets/productos/fotProAct1.jpg';
+import fotProAct2 from './assets/productos/fotProAct2.jpg';
+import fotProAct3 from './assets/productos/fotProAct3.jpg';
+import fotProAct4 from './assets/productos/fotProAct4.jpg';
+import fotProAct5 from './assets/productos/fotProAct5.jpg';
+import fotProAct6 from './assets/productos/fotProAct6.jpg';
+import fotProAct7 from './assets/productos/fotProAct7.jpg';
+import fotProAct8 from './assets/productos/fotProAct8.jpg';
+import fotProAct9 from './assets/productos/fotProAct9.jpg';
+import fotProAct10 from './assets/productos/fotProAct10.jpg';
+import fotProAct11 from './assets/productos/fotProAct11.jpg';
+import fotProAct12 from './assets/productos/fotProAct12.jpg';
+import fotProAct13 from './assets/productos/fotProAct13.jpg';
+import fotProAct14 from './assets/productos/fotProAct14.jpg';
+import fotProAct15 from './assets/productos/fotProAct15.jpg';
+import fotProAct16 from './assets/productos/fotProAct16.jpg';
+import fotProAct17 from './assets/productos/fotProAct17.jpg';
+import fotProAct18 from './assets/productos/fotProAct18.jpg';
+import fotProAct19 from './assets/productos/fotProAct19.jpg';
+import fotProAct20 from './assets/productos/fotProAct20.jpg';
+import fotProAct21 from './assets/productos/fotProAct21.jpg';
+import fotProAct22 from './assets/productos/fotProAct22.jpg';
+import fotProAct23 from './assets/productos/fotProAct23.jpg';
+import fotProAct24 from './assets/productos/fotProAct24.jpg';
+import fotProAct25 from './assets/productos/fotProAct25.jpg';
+import fotProAct26 from './assets/productos/fotProAct26.jpg';
+import fotProAct27 from './assets/productos/fotProAct27.jpg';
+import fotProAct28 from './assets/productos/fotProAct28.jpg';
+import fotProAct29 from './assets/productos/fotProAct29.jpg';
+import fotProAct30 from './assets/productos/fotProAct30.jpg';
+import fotProAct31 from './assets/productos/fotProAct31.jpg';
+import fotProAct32 from './assets/productos/fotProAct32.jpg';
+import fotProAct33 from './assets/productos/fotProAct33.jpg';
+import fotProAct34 from './assets/productos/fotProAct34.jpg';
 
 // Fotos Accesorios
-import fotAccesrio1 from './assets/productos/fotAcce1.png';
-import fotAccesrio2 from './assets/productos/fotAcce2.png';
-import fotAccesrio3 from './assets/productos/fotAcce3.png';
-import fotAccesrio4 from './assets/productos/fotAcce4.png';
+import fotAccesrio1 from './assets/productos/fotAccesrio1.jpg';
+import fotAccesrio2 from './assets/productos/fotAccesrio2.jpg';
+import fotAccesrio3 from './assets/productos/fotAccesrio3.jpg';
+import fotAccesrio4 from './assets/productos/fotAccesrio4.jpg';
 
 
 // import de fondo Web 
