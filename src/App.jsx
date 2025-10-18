@@ -81,7 +81,8 @@ const App = () => {
   // Falta agregarle
   // "No vestimos cuerpos, vestimos personalidades. #NANA es el código de las que no siguen el mapa."
   const InicioSection = () => (
-    <div className="relative w-screen h-screen overflow-hidden flex flex-col items-center justify-center text-center">
+    <div className="relative w-full h-screen-fix overflow-hidden flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat bg-fondo-web">
+      {/* Agrega las bg-cover, bg-center, bg-no-repeat y bg-fondo-web, ademas cambien el h-screen por h-screen-fix(que esta en el css como una clase) junto que cambie el w-screen por w-full*/}
       {/* El canvas de Three.js ocupa toda la pantalla */}
 
       {/* Cuadro Nana */}
@@ -184,7 +185,7 @@ const App = () => {
       id: 5,
       nombre: 'VESTIDO LISA',
       precio: 990,
-      imagenUrl: fotProAct4,
+      imagenUrl: fotProAct5,
       descripcion: 'Vestido Lisa negro super comodo para marcar presencia.',
     },
     {
