@@ -81,14 +81,17 @@ const App = () => {
   // Falta agregarle
   // "No vestimos cuerpos, vestimos personalidades. #NANA es el código de las que no siguen el mapa."
   const InicioSection = () => (
-    <div className="relative w-full h-screen-fix overflow-hidden flex flex-col items-center justify-center text-center bg-cover bg-center bg-no-repeat bg-fondo-web">
-      {/* Agrega las bg-cover, bg-center, bg-no-repeat y bg-fondo-web, ademas cambien el h-screen por h-screen-fix(que esta en el css como una clase) junto que cambie el w-screen por w-full*/}
-      {/* El canvas de Three.js ocupa toda la pantalla */}
+    // CLASES DE FONDO ELIMINADAS: Ahora el fondo fijo lo provee el componente FixedBackground.
+    // Se añade el bg-transparent para asegurar que el fondo se vea
+    <div className="relative w-full h-screen-fix overflow-hidden flex flex-col items-center justify-center text-center bg-transparent">
+      {/* Overlay para mejorar el constraste del texto*/}
+      {/* Se añade el overlay *dentro* de esta seccion para que solo cubra el area del viewport inicial */}
+      <div className="absolute inset-0 bg-black/40 z-[5]"></div>
 
       {/* Cuadro Nana */}
 
       {/* ChatGPT Este tambine ace referiia al rectangulo central Peor no voe el texto #NANA  */}
-      <div className="relative z-10 p-8 ">
+      <div className="relative z-10 p-8 z-[10]">
         <h1 className="text-text-secondary font-logo text-5xl md:text-7xl font-extrabold mb-4">#NANA</h1>
       </div>
     </div>
@@ -424,7 +427,10 @@ const App = () => {
     },
   ];
 
-
+ // ------- Componente para solucionar problema de background
+ const FixedBackground = () => (
+  <div className="fixed inset-0 z-[-1] bg-cover bg-center bg-no-repeat bg-fondo-web" aria-hidden="true"/>
+ )
 
 
 
