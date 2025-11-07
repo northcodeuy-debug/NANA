@@ -618,7 +618,7 @@ If it declares any Font Awesome CSS pseudo-elements, they will not be rendered a
             bg-fondo-web 
             
             // 🟢 Comportamiento del fondo
-            bg-fixed bg-center bg-contain bg-[length:110%]
+            bg-repeat bg-[length:auto] min-h-screen bg-fixed
             
             // 🟢 Clases existentes (usan tus vars de tailwind.config.js) bg-primary
             text-text-primary  min-h-screen font-body
