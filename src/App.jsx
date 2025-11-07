@@ -494,7 +494,7 @@ const App = () => {
             bg-fondo-web 
             
             // 🟢 Comportamiento del fondo
-            bg-cover bg-fixed bg-center 
+            bg-repeat bg-[length:auto] min-h-screen bg-fixed
             
             // 🟢 Clases existentes (usan tus vars de tailwind.config.js) bg-primary
             text-text-primary  min-h-screen font-body
