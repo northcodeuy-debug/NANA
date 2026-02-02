@@ -31,6 +31,12 @@
   /* --font-body: 'Montserrat', sans-serif; */
 }
 
+/* Clase encargada de solucionar problemas con compatibilidad de móviles(Celulares)*/
+.h-screen-fix{
+  height: 100vh; /*Fallback*/ /* Para el resto que no sea Movil*/
+  height: 100dvh; /* Dynamic Viewport Height para mejor compatibilidad mòvil*/ /* Para todo lo referente a moviles*/
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
